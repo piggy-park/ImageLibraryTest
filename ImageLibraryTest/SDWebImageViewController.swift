@@ -24,16 +24,18 @@ final class SDWebImageViewController: UIViewController {
         super.viewDidLoad()
 
         printCachedDirectory()
-        self.collectionView.delegate = self
         self.collectionView.dataSource = self
         collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.id)
         setLayout()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        // remove All Disk Cache
-        SDImageCache.shared.diskCache.removeAllData()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("----------------------SDWebImage---------------------------")
+        // remove All Cache
+//        SDWebImageManager.shared.imageCache.clear(with: .all) {
+//            print("clear all cache")
+//        }
     }
     
     
@@ -45,9 +47,9 @@ final class SDWebImageViewController: UIViewController {
     }
     
     func printCacheSize() {
-        print("disk Cache Count: \(SDImageCache.shared.diskCache.totalCount())")
-        print("disk Cache Size: \(SDImageCache.shared.diskCache.totalSize() / 1024) KB")
-        print(SDImageCache.shared.memoryCache)
+//        print("disk Cache Count: \(SDImageCache.shared.diskCache.totalCount())")
+//        print("disk Cache Size: \(SDImageCache.shared.diskCache.totalSize() / 1024) KB")
+//        print(SDImageCache.shared.memoryCache)
     }
     
     private func printCachedDirectory() {
@@ -61,7 +63,7 @@ final class SDWebImageViewController: UIViewController {
 extension SDWebImageViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return data.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -70,15 +72,10 @@ extension SDWebImageViewController: UICollectionViewDataSource {
         else { return UICollectionViewCell() }
         
         let url = URL(string: data[indexPath.row])
-        cell.imageView.sd_setImage(with: url)
-        printCacheSize()
+        
+        cell.imageView.sd_setImage(with: url) { image, _, cachetype, _ in
+            print(image)
+        }
         return cell
-    }
-}
-
-extension SDWebImageViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailViewController = DetailViewController()
-        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

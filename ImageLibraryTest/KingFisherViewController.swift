@@ -21,11 +21,6 @@ final class KingFisherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // remove All Disk Cache
-        KingfisherManager.shared.cache.clearCache()
-        
-        printCachedDirectory()
-        
         self.collectionView.dataSource = self
         collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.id)
         setLayout()
@@ -38,13 +33,13 @@ final class KingFisherViewController: UIViewController {
         }
     }
     
-    func printCacheSize() {
-    }
     
-    private func printCachedDirectory() {
-        let fileManager = FileManager.default
-        let documentPath: URL = fileManager.urls(for: .cachesDirectory, in: .userDomainMask)[0]
-        print(documentPath)
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("----------------------King Fisher---------------------------")
+        // remove All Disk Cache
+//        KingfisherManager.shared.cache.clearCache()
     }
 }
 
@@ -52,17 +47,20 @@ final class KingFisherViewController: UIViewController {
 extension KingFisherViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return data.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.id,
                                                             for: indexPath) as? CustomCollectionViewCell
         else { return UICollectionViewCell() }
-        
         let url = URL(string: data[indexPath.row])
-        cell.imageView.kf.setImage(with: url)
-//        printCacheSize()
+        cell.imageView.kf.setImage(with: url) { result in
+            
+            print(result.map({ result in
+                result
+            }))
+        }
         return cell
     }
 }

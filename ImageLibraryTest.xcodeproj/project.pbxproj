@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D066C3928BD006900B30912 /* NoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D066C3828BD006900B30912 /* NoLibraryViewController.swift */; };
 		8D6F535B28B20A2800A6DE8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F535A28B20A2800A6DE8A /* AppDelegate.swift */; };
 		8D6F535D28B20A2800A6DE8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F535C28B20A2800A6DE8A /* SceneDelegate.swift */; };
 		8D6F535F28B20A2800A6DE8A /* NukeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F535E28B20A2800A6DE8A /* NukeViewController.swift */; };
@@ -20,10 +21,11 @@
 		8D6F537F28B2641E00A6DE8A /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F537E28B2641E00A6DE8A /* CustomCollectionViewCell.swift */; };
 		8D6F538228B264DE00A6DE8A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8D6F538128B264DE00A6DE8A /* SnapKit */; };
 		8D6F538428B2707F00A6DE8A /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F538328B2707F00A6DE8A /* MockData.swift */; };
-		8D6F538628B287B600A6DE8A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F538528B287B600A6DE8A /* DetailViewController.swift */; };
+		8D6F538628B287B600A6DE8A /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F538528B287B600A6DE8A /* RootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D066C3828BD006900B30912 /* NoLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoLibraryViewController.swift; sourceTree = "<group>"; };
 		8D6F535728B20A2800A6DE8A /* ImageLibraryTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageLibraryTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6F535A28B20A2800A6DE8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D6F535C28B20A2800A6DE8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,7 +37,7 @@
 		8D6F537A28B21FFD00A6DE8A /* SDWebImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDWebImageViewController.swift; sourceTree = "<group>"; };
 		8D6F537E28B2641E00A6DE8A /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		8D6F538328B2707F00A6DE8A /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
-		8D6F538528B287B600A6DE8A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8D6F538528B287B600A6DE8A /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,10 +74,11 @@
 		8D6F535928B20A2800A6DE8A /* ImageLibraryTest */ = {
 			isa = PBXGroup;
 			children = (
-				8D6F537A28B21FFD00A6DE8A /* SDWebImageViewController.swift */,
-				8D6F535E28B20A2800A6DE8A /* NukeViewController.swift */,
+				8D066C3828BD006900B30912 /* NoLibraryViewController.swift */,
 				8D6F537828B21FD800A6DE8A /* KingFisherViewController.swift */,
-				8D6F538528B287B600A6DE8A /* DetailViewController.swift */,
+				8D6F535E28B20A2800A6DE8A /* NukeViewController.swift */,
+				8D6F537A28B21FFD00A6DE8A /* SDWebImageViewController.swift */,
+				8D6F538528B287B600A6DE8A /* RootViewController.swift */,
 				8D6F537E28B2641E00A6DE8A /* CustomCollectionViewCell.swift */,
 				8D6F538328B2707F00A6DE8A /* MockData.swift */,
 				8D6F536E28B2195A00A6DE8A /* SupportingFiles */,
@@ -178,9 +181,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D6F535F28B20A2800A6DE8A /* NukeViewController.swift in Sources */,
-				8D6F538628B287B600A6DE8A /* DetailViewController.swift in Sources */,
+				8D6F538628B287B600A6DE8A /* RootViewController.swift in Sources */,
 				8D6F535B28B20A2800A6DE8A /* AppDelegate.swift in Sources */,
 				8D6F537F28B2641E00A6DE8A /* CustomCollectionViewCell.swift in Sources */,
+				8D066C3928BD006900B30912 /* NoLibraryViewController.swift in Sources */,
 				8D6F537928B21FD800A6DE8A /* KingFisherViewController.swift in Sources */,
 				8D6F537B28B21FFD00A6DE8A /* SDWebImageViewController.swift in Sources */,
 				8D6F538428B2707F00A6DE8A /* MockData.swift in Sources */,

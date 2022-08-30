@@ -7,6 +7,7 @@
 
 import UIKit
 import Nuke
+import Kingfisher
 
 class NukeViewController: UIViewController {
     
@@ -22,17 +23,17 @@ class NukeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        printCachedDirectory()
-        
         self.collectionView.dataSource = self
         collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.id)
         setLayout()
 
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        print("")
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("----------------------Nuke---------------------------")
+//        Nuke.ImageCache.shared.removeAll()
+//        Nuke.DataLoader.sharedUrlCache.removeAllCachedResponses()
     }
     
     private func setLayout() {
@@ -41,32 +42,29 @@ class NukeViewController: UIViewController {
             $0.edges.equalToSuperview()
         }
     }
-    
-    func printCacheSize() {
-        
-    }
-    
-    private func printCachedDirectory() {
-        let fileManager = FileManager.default
-        let documentPath: URL = fileManager.urls(for: .cachesDirectory, in: .userDomainMask)[0]
-        print(documentPath)
-    }
 }
 
 
 extension NukeViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return data.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.id,
                                                             for: indexPath) as? CustomCollectionViewCell
         else { return UICollectionViewCell() }
+        print(ImageCache.defaultCostLimit())
         
         let url = URL(string: data[indexPath.row])
-        Nuke.loadImage(with: url!, into: cell.imageView)
+        
+        Nuke.loadImage(with: url!, into: cell.imageView) { result in
+            print(result.map({ result in
+//                result.urlResponse
+                result.container
+            }))
+        }
         return cell
     }
 }
