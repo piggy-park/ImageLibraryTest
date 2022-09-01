@@ -33,8 +33,6 @@ final class KingFisherViewController: UIViewController {
         }
     }
     
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("----------------------King Fisher---------------------------")
@@ -54,12 +52,11 @@ extension KingFisherViewController: UICollectionViewDataSource {
         else { return UICollectionViewCell() }
         let url = URL(string: data[indexPath.row])
         cell.imageView.kf.setImage(with: url) { result in
-            
+
             print(result.map({ result in
-                result
+                result.image
             }))
         }
         return cell
     }
 }
-

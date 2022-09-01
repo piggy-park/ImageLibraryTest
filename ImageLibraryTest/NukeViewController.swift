@@ -7,7 +7,6 @@
 
 import UIKit
 import Nuke
-import Kingfisher
 
 class NukeViewController: UIViewController {
     
@@ -64,24 +63,5 @@ extension NukeViewController: UICollectionViewDataSource {
             }))
         }
         return cell
-    }
-}
-
-extension NukeViewController: UICollectionViewDataSourcePrefetching {
-    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        <#code#>
-    }
-    
-    func collectionView(
-    _ collectionView: UICollectionView,
-    willDisplay cell: UICollectionViewCell,
-    forItemAt indexPath: IndexPath
-    ) {
-        let imageUrl = URL(string:data[indexPath.row])!
-    if let cell = cell as? CustomCollectionViewCell {
-        Nuke.loadImage(with: imageUrl, into: cell.imageView) { result in
-            print("\(indexPath.row) \(result)")
-        }
-        }
     }
 }

@@ -61,8 +61,6 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
     }
 }
 
-
-
 //imageCache를 담당할 싱글톤 클래스
 class ImageCacheManger {
     static var shared = NSCache<NSString,UIImage>() //memory
