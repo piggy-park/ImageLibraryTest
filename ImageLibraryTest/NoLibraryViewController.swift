@@ -135,7 +135,7 @@ class ImageManager: UIViewController {
             guard let imageData = data,
                   let image = UIImage(data: imageData) else { return }
             if !fileManager.fileExists(atPath: filePath.path) {
-                fileManager.createFile(atPath: filePath.path, contents: image.pngData(), attributes: nil)
+                fileManager.createFile(atPath: filePath.path, contents: imageData, attributes: nil)
                 ImageCacheManger.shared.setObject(image, forKey: cacheKey)    //cacheKey로 image를 등록함.
                 DispatchQueue.main.async {
                     imageView.image = image
