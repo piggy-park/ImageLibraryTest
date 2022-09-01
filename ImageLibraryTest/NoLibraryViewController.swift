@@ -25,6 +25,7 @@ class NoLibraryViewController: UIViewController {
         super.viewDidLoad()
         self.collectionView.dataSource = self
         collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.id)
+        
         setLayout()
     }
 
@@ -59,6 +60,7 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
     return cell
     }
 }
+
 
 
 //imageCache를 담당할 싱글톤 클래스

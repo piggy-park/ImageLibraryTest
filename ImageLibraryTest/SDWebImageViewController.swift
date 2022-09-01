@@ -22,7 +22,7 @@ final class SDWebImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         printCachedDirectory()
         self.collectionView.dataSource = self
         collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.id)
@@ -32,10 +32,6 @@ final class SDWebImageViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("----------------------SDWebImage---------------------------")
-        // remove All Cache
-//        SDWebImageManager.shared.imageCache.clear(with: .all) {
-//            print("clear all cache")
-//        }
     }
     
     
@@ -44,12 +40,6 @@ final class SDWebImageViewController: UIViewController {
         collectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-    }
-    
-    func printCacheSize() {
-//        print("disk Cache Count: \(SDImageCache.shared.diskCache.totalCount())")
-//        print("disk Cache Size: \(SDImageCache.shared.diskCache.totalSize() / 1024) KB")
-//        print(SDImageCache.shared.memoryCache)
     }
     
     private func printCachedDirectory() {

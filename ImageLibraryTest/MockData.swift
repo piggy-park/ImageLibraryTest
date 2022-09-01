@@ -9,6 +9,7 @@ import Foundation
 
 struct MockData {
     static let mockData = [
+//        "https://i.picsum.photos/id/498/2500/2500.jpg?hmac=k1MZ2jMhIWJPcy89wXB_p1st3KgYlQMm6i1YQvKQOow",
         "https://cdn.pixabay.com/photo/2017/08/03/17/09/hdd-2577405_1280.jpg",
         "https://images.unsplash.com/photo-1660892573745-a313cae56424?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=900&q=60",
          "https://images.unsplash.com/photo-1657299156653-d3c0147ba3ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",

@@ -56,18 +56,19 @@ final class RootViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // remove All Cache
+        print("------------------clear disk Cache------------------")
+        // remove Disk Cache
 //        SDImageCache.shared.clearMemory()
 //        SDImageCache.shared.clearDisk()
 //
 //        KingfisherManager.shared.cache.clearCache()
-//
+//        
 //        Nuke.ImageCache.shared.removeAll()
 //
 //        Nuke.DataLoader.sharedUrlCache.removeAllCachedResponses()
-////
+//        
 //        ImageCacheManger.shared.removeAllObjects()
-//
+
     }
     
     private func printCachedDirectory() {

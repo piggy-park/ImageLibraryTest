@@ -38,8 +38,6 @@ final class KingFisherViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("----------------------King Fisher---------------------------")
-        // remove All Disk Cache
-//        KingfisherManager.shared.cache.clearCache()
     }
 }
 
